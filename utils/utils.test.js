@@ -5,8 +5,22 @@ it('should add two numbers', () => {
   expect(utils.add(33, 11)).toBe(44).toBeA('number');
 });
 
+it('should async add two numbers', (done) => {
+  utils.asyncAdd(4, 3, (sum) => {
+    expect(sum).toBe(7).toBeA('number');
+    done();
+  })
+});
+
 it('should square a number', () => {
   expect(utils.square(9)).toBe(81).toBeA('number');
+});
+
+it('should async square a number', (done) => {
+  utils.asyncSquare(3, (square) => {
+    expect(square).toBe(9).toBeA('number');
+    done();
+  })
 });
 
 it('should expect some values', () => {
